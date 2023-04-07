@@ -16,29 +16,35 @@
     <h2 id="table">Table</h2>
     <table>
       <tr>
-        <th>MVP</th>
         <th>Description</th>
-        <th>Stretch</th>
+        <th>Status</th>
         <th>Description</th>
+        <th>Status</th>
       </tr>
       <tr>
         <td>Create home route</td>
-        <td>X</td>
+        <td>MVP</td>
         <td>XX/td>
-        <td>XXX</td>
+        <td>Stretch</td>
       </tr>
       <tr>
         <td>Allow the ability for the user to fill out a survey that via POST</td>
-        <td>X</td>
+        <td>MVP</td>
         <td>Allow the abilityt to select period symptoms and POST </td>
-        <td>Style Home Page</td>
+        <td>Stretch</td>
       </tr>
       <tr>
         <td>Allow the abilityt to select period symptoms and POST</td>
-        <td>Row 3, Column 2</td>
+        <td>MVP</td>
         <td>Row 3, Column 3</td>
-        <td>Style Home Page</td>
+        <td>Stretch</td>
       </tr>
+    <tr>
+        <td>Style Home Page</td>
+        <td>MVP</td>
+        <td>Row 3, Column 3</td>
+        <td>Stretch</td>
+    </tr>
     </table>
     <h2 id="images">Images</h2>
     <ul>
