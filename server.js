@@ -1,15 +1,17 @@
 // Dependencies
 const express = require('express');
 const app = express();
-const ejs = require('ejs');
+app.set('view engine', 'ejs');
 
 // Home Route
 app.get('/', (req, res) => {
-    res.send('Landing Page')
+    res.render("index.ejs");
 })
 
-// Set the view engine to EJS
-app.set('view engine', 'ejs');
+// About Route
+app.get('/views/about.ejs', (req, res) => {
+    res.render("about.ejs");
+})
 
 // Listener
 app.listen(3000, () => {
