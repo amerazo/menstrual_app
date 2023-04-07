@@ -48,8 +48,8 @@
     </table>
     <h2 id="images">Images</h2>
     <ul>
-      <li><img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li>
-      <li><img src="https://via.placeholder.com/150" alt="Screenshot 2"></li>
+        <img src="https://i.imgur.com/FmdFRzN.jpg" alt="Image 1">
+        <img src="https://i.imgur.com/5YNSP0f.jpg" alt="Image 2">
       <li><img src="https://via.placeholder.com/150" alt="Screenshot 3"></li>
     </ul>
     <h2 id="trello">Trello</h2>
@@ -58,3 +58,6 @@
 </html>
 
 
+color scheme
+https://imgur.com/gallery/FmdFRzN
+https://imgur.com/gallery/5YNSP0f
