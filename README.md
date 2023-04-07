@@ -30,19 +30,19 @@
       <tr>
         <td>Allow the ability for the user to fill out a survey that via POST</td>
         <td>MVP</td>
-        <td>Allow the abilityt to select period symptoms and POST </td>
+        <td>Create the ability to login </td>
         <td>Stretch</td>
       </tr>
       <tr>
         <td>Allow the abilityt to select period symptoms and POST</td>
         <td>MVP</td>
-        <td>Row 3, Column 3</td>
+        <td>Create data analytics from data </td>
         <td>Stretch</td>
       </tr>
     <tr>
         <td>Style Home Page</td>
         <td>MVP</td>
-        <td>Row 3, Column 3</td>
+        <td>None</td>
         <td>Stretch</td>
     </tr>
     </table>
