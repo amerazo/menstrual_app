@@ -53,8 +53,6 @@
     <h3> Wireframe </h3>
     <img src="https://i.imgur.com/nXRbFlR.png">
     </ul>
-    <h2 id="trello">Trello</h2>
-    <p><a href="https://trello.com/invite/accept-board"> </a>
   </body>
 </html>
 
