@@ -54,7 +54,7 @@
     <img src="https://i.imgur.com/nXRbFlR.png">
     </ul>
     <h2 id="trello">Trello</h2>
-    <p><img src="https://trello.com/invite/accept-board">
+    <p><a href="https://trello.com/invite/accept-board"> </a>
   </body>
 </html>
 
