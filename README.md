@@ -49,7 +49,7 @@
     <h2 id="images">Images</h2>
     <ul>
         <img src="https://i.imgur.com/FmdFRzN.jpg" alt="Image 1">
-        <img src="https://imgur.com/nXRbFlR" alt="Image 2">
+        <img src="https://imgur.com/gallery/nXRbFlR" alt="Image 2">
       <li><img src="https://via.placeholder.com/150" alt="Screenshot 3"></li>
     </ul>
     <h2 id="trello">Trello</h2>
