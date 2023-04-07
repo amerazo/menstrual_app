@@ -22,22 +22,22 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>iX</td>
+        <td>Create home route</td>
         <td>X</td>
         <td>XX/td>
         <td>XXX</td>
       </tr>
       <tr>
-        <td>Create home route</td>
         <td>Allow the ability for the user to fill out a survey that via POST</td>
+        <td>X</td>
         <td>Allow the abilityt to select period symptoms and POST </td>
         <td>Style Home Page</td>
       </tr>
       <tr>
-        <td>Row 3, Column 1</td>
+        <td>Allow the abilityt to select period symptoms and POST</td>
         <td>Row 3, Column 2</td>
         <td>Row 3, Column 3</td>
-        <td>Row 3, Column 4</td>
+        <td>Style Home Page</td>
       </tr>
     </table>
     <h2 id="images">Images</h2>
