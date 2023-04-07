@@ -16,16 +16,16 @@
     <h2 id="table">Table</h2>
     <table>
       <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-        <th>Column 3</th>
-        <th>Column 4</th>
+        <th>MVP</th>
+        <th>Description</th>
+        <th>Stretch</th>
+        <th>Description</th>
       </tr>
       <tr>
-        <td>MVP</td>
-        <td>Description</td>
-        <td>Stretch</td>
-        <td>Description</td>
+        <td>iX</td>
+        <td>X</td>
+        <td>XX/td>
+        <td>XXX</td>
       </tr>
       <tr>
         <td>Create home route</td>
