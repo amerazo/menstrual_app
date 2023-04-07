@@ -55,7 +55,3 @@
   </body>
 </html>
 
-
-color scheme
-https://imgur.com/gallery/FmdFRzN
-https://imgur.com/gallery/5YNSP0f
