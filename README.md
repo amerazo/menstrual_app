@@ -24,7 +24,7 @@
       <tr>
         <td>Create home route</td>
         <td>MVP</td>
-        <td>XX/td>
+        <td>Create ability to register<td>
         <td>Stretch</td>
       </tr>
       <tr>
