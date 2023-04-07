@@ -11,10 +11,9 @@
       <li><a href="#description">Description</a></li>
       <li><a href="#table">Table</a></li>
       <li><a href="#images">Images</a></li>
-      <li><a href="#license">License</a></li>
     </ul>
     <h2 id="description">Description</h2>
-    <p>This is a sample readme file for a Visual Studio Code project with a table and embedded links to images.</p>
+    <p>Track your cycle with ease and accuracy using our intuitive period app. Stay informed about your menstrual health and never miss a beat with personalized reminders and insights. Try it now and take control of your cycle!</p>
     <h2 id="table">Table</h2>
     <table>
       <tr>
@@ -48,8 +47,8 @@
       <li><img src="https://via.placeholder.com/150" alt="Screenshot 2"></li>
       <li><img src="https://via.placeholder.com/150" alt="Screenshot 3"></li>
     </ul>
-    <h2 id="license">License</h2>
-    <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+    <h2 id="license">MVP</h2>
+    <p>XX</a>.</p>
   </body>
 </html>
 
