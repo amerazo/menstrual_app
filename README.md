@@ -53,7 +53,7 @@
       <li><img src="https://via.placeholder.com/150" alt="Screenshot 3"></li>
     </ul>
     <h2 id="trello">Trello</h2>
-    <p>img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li></a>.</p>
+    <p><img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li></a>.</p>
   </body>
 </html>
 
