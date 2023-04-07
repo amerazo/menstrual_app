@@ -48,7 +48,8 @@
     </table>
     <h2 id="images">Images</h2>
     <ul>
-      <li><img src="https://imgur.com/gallery/5YNSP0f" alt="Screenshot 3"></li>
+      <li>
+      [Main Site](https://imgur.com/gallery/FmdFRzN)
     </ul>
     <h2 id="trello">Trello</h2>
     <p><img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li></a>.</p>
