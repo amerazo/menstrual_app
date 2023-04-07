@@ -48,7 +48,10 @@
     </table>
     <h2 id="images">Images</h2>
     <ul>
+    <h3> Color Scheme </h3>
     <img src="https://i.imgur.com/lhupeA5.png">
+    <h3> Wireframe </h3>
+    <img src="https://i.imgur.com/nXRbFlR.png">
     </ul>
     <h2 id="trello">Trello</h2>
     <p><img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li></a>.</p>
