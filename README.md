@@ -48,10 +48,7 @@
     </table>
     <h2 id="images">Images</h2>
     <ul>
-        <img src="https://i.imgur.com/FmdFRzN.jpg" alt="Image 1">
-        <img src="https://imgur.com/gallery/nXRbFlR" alt="Image 2">
-        <blockquote class="imgur-embed-pub" lang="en" data-id="nXRbFlR"  ><a href="//imgur.com/nXRbFlR">Period App</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-      <li><img src="https://via.placeholder.com/150" alt="Screenshot 3"></li>
+      <li><img src="https://imgur.com/gallery/5YNSP0f" alt="Screenshot 3"></li>
     </ul>
     <h2 id="trello">Trello</h2>
     <p><img src="https://trello.com/invite/b/FcVI5XPB/ATTIba2aca237a4be9f91fea250228b20cbe6DE5C649/period-app" alt="Screenshot 1"></li></a>.</p>
