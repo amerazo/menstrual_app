@@ -54,16 +54,14 @@
         font-size: 18px;
         cursor: pointer;
       }
-      <style>
-  nav {
-    background-color: #7b9cff;
-    color: #fffbd6;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
+      nav {
+        background-color: #7b9cff;
+        color: #fffbd6;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
   button {
     background-color: #fffbd6;
     border: 2px solid #7b9cff;
@@ -74,18 +72,16 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
-
   button:hover {
     background-color: #7b9cff;
     color: #fffbd6;
   }
 </style>
-
 <nav>
   <button onclick="location.href='/'">Home</button>
 </nav>
-
-      
+<head>
+  </head>
     </style>
   </head>
   <body>
@@ -216,8 +212,9 @@
         <input type="text" name="temperature">
       </label>
       <br>
-      
       <button type="submit">Submit</button>
+      <input type="hidden" name="selectedDate" id="selectedDate">
+
     </form>
   </body>
 </html>

@@ -1,0 +1,9 @@
+app.get('/dashboard', (req, res) => {
+    const userId = req.session.userId;
+    if (!userId) {
+      return res.redirect('/login');
+    }
+    const user = users.find(user => user.id === userId);
+    res.render('dashboard', { user });
+  });
+  
