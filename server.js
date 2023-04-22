@@ -7,6 +7,8 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const secretKey = process.env.SECRET_KEY;
+
 
 //mongoDB
 const store = new MongoDBStore({
@@ -24,29 +26,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Session middleware
 app.use(session({
-    name: 'sessionId',
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    store: store,
-    cookie: { secure: false }
+  name: 'sessionId',
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: store,
+  cookie: { secure: false }
 }));
 
 app.use(morgan('dev'));
 
 //Mongoose
-process.env.MONGODB_URI = 'mongodb://localhost:27017/mydb';
+process.env.MONGODB_URI = 'mongodb+srv://menstrual:i0r3D6rayayhy5bo@sei.3zeldhq.mongodb.net/superperiodapp';
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
+}).then(() => {
   console.log('Connected to MongoDB Atlas');
+}).catch((error) => {
+  console.log(error);
 });
-
 
 
 //Period Schema
