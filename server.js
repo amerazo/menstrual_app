@@ -14,13 +14,16 @@ const store = new MongoDBStore({
   collection: 'mySessions'
 });
 
-//mongodb middleware
+store.on('error', function(error) {
+  console.log(error);
+});
+
 app.use(session({
   name: 'sessionId',
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false }
+  store: store
 }));
 
 
