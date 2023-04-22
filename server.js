@@ -6,6 +6,21 @@ const morgan = require('morgan');
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
+//mongoDB
+const store = new MongoDBStore({
+  uri: 'mongodb+srv://menstrual:i0r3D6rayayhy5bo@sei.3zeldhq.mongodb.net/superperiodapp',
+  collection: 'mySessions'
+});
+
+//mongodb middleware
+app.use(session({
+  secret: 'mysecretkey',
+  resave: false,
+  saveUninitialized: false,
+  store: store
+}));
 
 //middleware
 app.set('view engine', 'ejs');
