@@ -36,6 +36,10 @@ app.use(session({
 
 app.use(morgan('dev'));
 
+//// Set SESSION_SECRET environment variable
+process.env.SESSION_SECRET = 'mysecretvalue';
+
+
 //Mongoose
 process.env.MONGODB_URI = 'mongodb+srv://menstrual:i0r3D6rayayhy5bo@sei.3zeldhq.mongodb.net/superperiodapp';
 const mongoose = require('mongoose');
