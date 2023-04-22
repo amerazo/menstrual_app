@@ -18,24 +18,20 @@ store.on('error', function(error) {
   console.log(error);
 });
 
-app.use(session({
-  name: 'sessionId',
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  store: store
-}));
-
-
 //middleware
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//Session middleware
 app.use(session({
+    name: 'sessionId',
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: store,
     cookie: { secure: false }
 }));
+
 app.use(morgan('dev'));
 
 //Mongoose
@@ -49,6 +45,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB Atlas');
 });
+
 
 
 //Period Schema
