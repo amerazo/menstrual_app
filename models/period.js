@@ -1,20 +1,77 @@
-const { mongoose } = require('../db/connection');
 const mongoose = require('mongoose');
 
-const periodSchema = new mongoose.Schema(
-    {
-        Date: { type: Date, required: true },
-        FlowLevel: { type: String, required: true },
-        Feelings: { type: String, required: true },
-        PhysicalSymptoms: { type: String, required: true },
-        Discharge: { type: String, required: true },
-        BodyTemp: { type: String, required: true },
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'user'
-        }
-    }
-);
+const periodSchema = new mongoose.Schema({
+  startDate: {
+    type: Date,
+    required: true
+  },
+  endDate: {
+    type: Date,
+    required: true
+  },
+  flowLength: {
+    type: Number,
+    required: true
+  },
+  notes: {
+    type: String
+  }
+}, {
+  timestamps: true
+});
+
 const Period = mongoose.model('Period', periodSchema);
+
 module.exports = Period;
 
+////
+const mongoose = require('mongoose');
+
+const periodSchema = new mongoose.Schema({
+  startDate: {
+    type: Date,
+    required: true
+  },
+  endDate: {
+    type: Date,
+    required: true
+  },
+  flowLength: {
+    type: Number,
+    required: true
+  },
+  notes: {
+    type: String
+  },
+  flowLevel: {
+    type: String,
+    enum: ['spotting', 'light', 'medium', 'heavy']
+  },
+  cramps: {
+    type: String,
+    enum: ['Light Cramps']
+  },
+  emotional: [{
+    type: String,
+    enum: ['sad', 'tearful', 'anxious', 'angry', 'frustrated', 'joyful', 'peaceful', 'meh']
+  }],
+  physical: [{
+    type: String,
+    enum: ['breast sensitivity', 'back pain', 'nausea', 'bloating', 'cramps', 'other']
+  }],
+  otherPhysical: {
+    type: String
+  },
+  discharge: [{
+    type: String,
+    enum: ['clear', 'do not want to answer', 'none']
+  }],
+  temperature: {
+    type: Number
+  }
+}, {
+  timestamps: true
+});
+
+const Period = mongoose.model('Period', periodSchema);
+module.exports = Period;

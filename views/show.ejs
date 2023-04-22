@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= period.startDate %> - <%= period.endDate %></title>
+  <style>
+    body {
+      background-color: #fffbd6;
+      color: #333;
+    }
+
+    nav {
+      background-color: #ffeaf2;
+      color: #7b9cff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #7b9cff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #fff;
+      color: #333;
+      border-radius: 5px;
+    }
+
+    h1 {
+      background-color: #ffb170;
+      color: #fff;
+      padding: 10px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      background-color: #7b9cff;
+      color: #fff;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      color: #7b9cff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffb170;
+    }
+
+    button[type="submit"] {
+      background-color: #ff8181;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffeaf2;
+      color: #ff8181;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/periods/new">New Period</a>
+  </nav>
+
+  <h1><%= period.startDate %> - <%= period.endDate %></h1>
+
+  <p><strong>Flow Length:</strong> <%= period.flowLength %> days</p>
+
+  <% if (period.notes) { %>
+    <p><strong>Notes:</strong> <%= period.notes %></p>
+  <% } %>
+
+  <h2>Symptoms:</h2>
+
+  <p><strong>Flow Level:</strong> <%= period.flowLevel %></p>
+
+  <% if (period.cramps) { %>
+    <p><strong>Cramps:</strong> <%= period.cramps %></p>
+  <% } %>
+
+  <% if (Array.isArray(period.emotional) && period.emotional.length) { %>
+    <p><strong>Emotional:</strong> <%= period.emotional.join(', ') %></p>
+  <% } %>
+
+  <% if (Array.isArray(period.physical) && period.physical.length) { %>
+    <p><strong>Physical:</strong> <%= period.physical.join(', ') %></p>
+  <% } %>
+
+  <% if (period.otherPhysical) { %>
+    <p><strong>Other Physical:</strong> <%= period.otherPhysical %></p>
+  <% } %>
+
+  <% if (Array.isArray(period.discharge) && period.discharge.length) { %>
+    <p><strong>Discharge:</strong> <%= period.discharge.join(', ') %></p>
+  <% } %>
+
+  <% if (period.temperature) { %>
+    <p><strong>Temperature:</strong> <%= period.temperature %> degrees Fahrenheit</p>
+  <% } %>
+
+  <a href="/periods/<%= period.id %>/edit">Edit</a>
+
+  <form action="/periods/<%= period.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+</body>
+
+</html>
