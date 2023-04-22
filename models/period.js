@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const periodSchema = new mongoose.Schema({
   startDate: {
     type: Date,
@@ -21,12 +20,8 @@ const periodSchema = new mongoose.Schema({
 });
 
 const Period = mongoose.model('Period', periodSchema);
-
 module.exports = Period;
-
-////
 const mongoose = require('mongoose');
-
 const periodSchema = new mongoose.Schema({
   startDate: {
     type: Date,

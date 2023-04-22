@@ -32,15 +32,6 @@ db.once('open', () => {
 });
 
 
-// Set up database connection
-// mongoose.connect('mongodb+srv://menstrual:i0r3D6rayayhy5bo@sei.3zeldhq.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', () => {
-//   console.log('Database connected');
-// });
-
-
 //Period Schema
 const periodSchema = new mongoose.Schema({
   startDate: Date,
@@ -69,6 +60,7 @@ app.get('/views/about.ejs', (req, res) => {
   res.render("about.ejs");
 })
 
+//Period Routes
 app.get('/periods', async (req, res) => {
   const periods = await Period.find({});
   res.render('index', { periods });
@@ -106,6 +98,98 @@ app.delete('/periods/:id', async (req, res) => {
   res.redirect('/periods');
 });
 
+// Sign Up Form
+app.get('/signup', async (req, res) => {
+  const periods = await Period.find({});
+  res.render("signupindex.ejs", { periods });
+});
+
+// UserSchema
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  password: String,
+  location: String,
+  gender: String,
+});
+app.use(express.urlencoded({ extended: true }));
+
+//
+app.post('/signup', async (req, res) => {
+  const { username, email, password, location, gender } = req.body;
+  const user = new User({ username, email, password, location, gender });
+  try {
+    await user.save();
+    res.redirect('/');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+const User = require('./models/user');
+
+
+// create a new user
+app.post('/users', async (req, res) => {
+  const { username, email, password, location, gender } = req.body;
+  const user = new User({ username, email, password, location, gender });
+  try {
+    await user.save();
+    res.redirect('/');
+    //In the case of an error, re-route
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+// Read all users
+app.get('/', async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.render('index', { users });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+// read one user
+app.get('/users/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findById(id);
+    res.render('edit', { user });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+// update one user
+app.put('/users/:id', async (req, res) => {
+  const { id } = req.params;
+  const { username, email, password, location, gender } = req.body;
+  try {
+    await User.findByIdAndUpdate(id, { username, email, password, location, gender });
+    res.redirect('/');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+// delete one user
+app.delete('/users/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await User.findByIdAndDelete(id);
+    res.redirect('/');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
 
 
 // Listener

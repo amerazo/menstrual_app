@@ -1,8 +1,8 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sign up</title>
+    <title>New User</title>
     <style>
       body {
         background-color: #fffbd6;
@@ -47,45 +47,11 @@
         font-size: 18px;
         cursor: pointer;
       }
-
-      <style>
-  nav {
-    background-color: #7b9cff;
-    color: #fffbd6;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  button {
-    background-color: #fffbd6;
-    border: 2px solid #7b9cff;
-    color: #7b9cff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #7b9cff;
-    color: #fffbd6;
-  }
-</style>
-
-<nav>
-  <button onclick="location.href='/'">Home</button>
-</nav>
-
-      
-    </style>
     </style>
   </head>
   <body>
-    <h1>Sign up</h1>
-    <form method="POST" action="/signup.ejs">
+    <h1>New User</h1>
+    <form method="POST" action="/users">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username">
 
@@ -97,7 +63,7 @@
 
       <label for="location">Location:</label>
       <input type="text" id="location" name="location">
-
+      
       <label for="gender">Gender:</label>
       <select id="gender" name="gender">
         <option value="female">Female</option>
@@ -105,9 +71,8 @@
         <option value="non-binary">Non-Binary</option>
         <option value="other">Other</option>
       </select>
-
-      <button type="submit">Sign up</button>
+      
+      <button type="submit">Create User</button>
     </form>
   </body>
 </html>
- -->
