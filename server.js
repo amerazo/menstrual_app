@@ -16,11 +16,13 @@ const store = new MongoDBStore({
 
 //mongodb middleware
 app.use(session({
-  secret: 'mysecretkey',
+  name: 'sessionId',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  store: store
+  cookie: { secure: false }
 }));
+
 
 //middleware
 app.set('view engine', 'ejs');
