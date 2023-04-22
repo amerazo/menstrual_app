@@ -17,7 +17,6 @@ app.use(session({
     cookie: { secure: false }
 }));
 app.use(morgan('dev'));
-// replace process.env.SESSION_SECRET with secret string.
 
 //Mongoose
 const mongoose = require('mongoose');
@@ -66,6 +65,7 @@ app.get('/periods', async (req, res) => {
   res.render('index', { periods });
 });
 
+//Period Add
 app.get('/periods/new', (req, res) => {
   res.render('new');
 });
@@ -76,11 +76,13 @@ app.post('/periods', async (req, res) => {
   res.redirect('/periods');
 });
 
+//Period Show
 app.get('/periods/:id', async (req, res) => {
   const period = await Period.findById(req.params.id);
   res.render('show', { period });
 });
 
+//Period Edit
 app.get('/periods/:id/edit', async (req, res) => {
   const period = await Period.findById(req.params.id);
   res.render('edit', { period });
@@ -92,6 +94,7 @@ app.put('/periods/:id', async (req, res) => {
   res.redirect(`/periods/${period.id}`);
 });
 
+//Period Delete
 app.delete('/periods/:id', async (req, res) => {
   const { id } = req.params;
   await Period.findByIdAndDelete(id);
@@ -114,7 +117,7 @@ const userSchema = new mongoose.Schema({
 });
 app.use(express.urlencoded({ extended: true }));
 
-//
+//Sign Up Error and Schema Layout
 app.post('/signup', async (req, res) => {
   const { username, email, password, location, gender } = req.body;
   const user = new User({ username, email, password, location, gender });
@@ -190,6 +193,11 @@ app.delete('/users/:id', async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+
+// Education Route
+app.get('/education', (req, res) => {
+  res.render("education.ejs");
+})
 
 
 // Listener

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
    <html>
-   
    <head>
      <title>Edit <%= period.startDate %> - <%= period.endDate %></title>
      <!DOCTYPE html>
 <html>
-
 <head>
   <title>Edit <%= period.startDate %> - <%= period.endDate %></title>
   <style>
@@ -155,7 +153,7 @@
       border-radius: 5px;
     }
 
-  /* Additional styles for better visibility */
+  /* Additional styling for better visibility */
 input[type="date"],
 input[type="number"],
 textarea,
@@ -213,18 +211,13 @@ footer {
      </nav>
      <h1>Edit <%= period.startDate %> - <%= period.endDate %></h1>
      <form action="/periods/<%= period.id %>?_method=PUT" method="POST">
+      <!-- //Form Inputs -->
        <label for="startDate">Start Date</label>
        <input type="date" id="startDate" name="period[startDate]" value="<%= period.startDate.toISOString().slice(0, 10) %>" required>
-   
        <label for="endDate">End Date</label>
        <input type="date" id="endDate" name="period[endDate]" value="<%= period.endDate.toISOString().slice(0, 10) %>" required>
-   
-       <!-- <label for="flowLength">Flow Length</label>
-       <input type="number" id="flowLength" name="period[flowLength]" value="<%= period.flowLength %>" min="0" required>
-    -->
        <label for="notes">Notes</label>
        <textarea id="notes" name="period[notes]"><%= period.notes %></textarea>
-   
        <h2>Symptoms</h2>
        <h3>Flow Level</h3>
        <label>
