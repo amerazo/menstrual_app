@@ -1,194 +1,67 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
-  <title>Menstrual App</title>
-  <head>
-    <title>Menstrual App</title>
-    <style>
-      body {
-        background-color: #fffbd6;
-        color: #333;
-        font-family: "Archivo Black", Arial, sans-serif;
-      }
-  
-      nav {
-        background-color: #ffeaf2;
-        color: #7b9cff;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: "Archivo Black", Arial, sans-serif;
-      }
-  
-      nav a {
-        color: #7b9cff;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        font-family: "Archivo Black", Arial, sans-serif;
-        padding: 10px;
-        transition: all 0.3s ease;
-      }
-  
-      nav a:hover {
-        background-color: #fff;
-        color: #333;
-        border-radius: 5px;
-      }
-  
-      h1 {
-        background-color: #ffb170;
-        color: #fff;
-        padding: 10px;
-        margin-top: 0;
-        margin-bottom: 20px;
-        font-family: "Archivo Black", Arial, sans-serif;
-      }
-  
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-  
-      th, td {
-        text-align: left;
-        padding: 8px;
-      }
-  
-      th {
-        background-color: #7b9cff;
-        color: #fff;
-      }
-  
-      tr:nth-child(even) {
-        background-color: #cdd6ff;
-      }
-  
-      tr:hover {
-        background-color: #ebecff;
-      }
-  
-      form button[type="submit"] {
-        background-color: #ff8181;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: "Archivo Black", Arial, sans-serif;
-      }
-  
-      form button[type="submit"]:hover {
-        background-color: #ffeaf2;
-        color: #ff8181;
-        font-family: "Archivo Black", Arial, sans-serif;
-      }
-  
-      a.view {
-        background-color: #7b9cff;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-  
-      a.view:hover {
-        background-color: #fff;
-        color: #7b9cff;
-      }
-  
-      a.edit {
-        background-color: #ffb170;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-  
-      a.edit:hover {
-        background-color: #fff;
-        color: #ffb170;
-      }
-  
-      form {
-        display: inline;
-      }
-  
-      form button.delete {
-        background-color: #ff8181;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-  
-      form button.delete:hover {
-        background-color: #ffeaf2;
-        color: #ff8181;
-      }
-  
-    </style>
-  </head>
-  
+ <title>Menstrual App</title>
+ <link rel="stylesheet" href="/css/style.css" />
 </head>
 
+
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/periods/new">New Period</a>
-  </nav>
+ <nav>
+   <a href="/">Home</a>
+   <a href="/periods/new">New Period</a>
+ </nav>
 
-  <h1>Period Tracker</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>FlowLevel</th>
-        <th>Cramps</th>
-        <th>Emotions</th>
-        <th>Physical Symptoms</th>
-        <th>Discharge</th>
-        <th>Temperature</th>
-        <th>Notes</th>
-        <th>Actions</th>
-        
-      </tr>
-    </thead>
+ <h1>Period Tracker</h1>
 
-    <tbody>
-      <% periods.forEach(period => { %>
-        <tr>
-          <td><%= period.startDate %></td>
-          <td><%= period.endDate %></td>
-          <td><%= period.flowLevel %> days</td>
-          <td><%= period.cramps %></td>
-          <td><%= period.emotional %> </td>
-          <td><%= period.physical %> </td>
-          <td><%= period.discharge %> </td>
-          <td><%= period.temperature %> </td>
-          <td><%= period.notes %></td>
-          <td>
-            <a href="/periods/<%= period.id %>">View</a> |
-            <a href="/periods/<%= period.id %>/edit">Edit</a> |
-            <form action="/periods/<%= period.id %>?_method=DELETE" method="POST" style="display:inline">
-              <button type="submit">Delete</button>
-            </form>
-          </td>
-        </tr>
-      <% }) %>
-    </tbody>
-  </table>
+
+ <table>
+   <thead>
+     <tr>
+       <th>Start Date</th>
+       <th>End Date</th>
+       <th>FlowLevel</th>
+       <th>Cramps</th>
+       <th>Emotions</th>
+       <th>Physical Symptoms</th>
+       <th>Discharge</th>
+       <th>Temperature</th>
+       <th>Notes</th>
+       <th>Actions</th>
+      
+     </tr>
+   </thead>
+
+
+   <tbody>
+     <% periods.forEach(period => { %>
+       <tr>
+         <td><%= period.startDate %></td>
+         <td><%= period.endDate %></td>
+         <td><%= period.flowLevel %> days</td>
+         <td><%= period.cramps %></td>
+         <td><%= period.emotional %> </td>
+         <td><%= period.physical %> </td>
+         <td><%= period.discharge %> </td>
+         <td><%= period.temperature %> </td>
+         <td><%= period.notes %></td>
+         <td>
+           <a href="/periods/<%= period.id %>">View</a> |
+           <a href="/periods/<%= period.id %>/edit">Edit</a> |
+           <form action="/periods/<%= period.id %>?_method=DELETE" method="POST" style="display:inline">
+             <button type="submit">Delete</button>
+           </form>
+         </td>
+       </tr>
+     <% }) %>
+   </tbody>
+ </table>
 </body>
 
+
 </html>
+
+
