@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 
+
 // Set up database connection
 //https://stackoverflow.com/questions/68234879/usenewurlparser-true-useunifiedtopology-true-what-is-the-use-of-this-in-mon
 mongoose.connect('mongodb+srv://menstrual:i0r3D6rayayhy5bo@sei.3zeldhq.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -39,9 +40,6 @@ const periodSchema = new mongoose.Schema({
  discharge: String,
  temperature: Number,
 });
-
-
-
 
 
 
@@ -154,7 +152,7 @@ app.listen(3000, () => {
 });
 
 
-// ///
+///
 
 // const MongoDBStore = require('connect-mongodb-session')(session);
 // const secretKey = process.env.SECRET_KEY;

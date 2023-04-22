@@ -3,38 +3,97 @@ const Period = require('../models/period');
 
 
 // Export controller functions
-module.exports = {
- index: async (req, res) => {
-   const periods = await Period.find({});
-   res.render('index', { periods });
- },
- new: (req, res) => {
-   res.render('new');
- },
- create: async (req, res) => {
-   const period = new Period(req.body.period);
-   await period.save();
-   res.redirect('/periods');
- },
- show: async (req, res) => {
-   const period = await Period.findById(req.params.id);
-   res.render('show', { period });
- },
- edit: async (req, res) => {
-   const period = await Period.findById(req.params.id);
-   res.render('edit', { period });
- },
- update: async (req, res) => {
-   const { id } = req.params;
-   const period = await Period.findByIdAndUpdate(id, { ...req.body.period });
-   res.redirect(`/periods/${period.id}`);
- },
- destroy: async (req, res) => {
-   const { id } = req.params;
-   await Period.findByIdAndDelete(id);
-   res.redirect('/periods');
- }
-};
+// //// Create
+// router.get ('/', async (req, res) => {
+//   res.render('new.ejs')
+// })
+// // Post
+// router.post('/', async (req, res) => {
+//   const books = await .create(req.body);
+//   res.redirect('/')
+// })
+
+// module.exports = {
+//  index: async (req, res) => {
+//    const periods = await Period.find({});
+//    res.render('index', { periods });
+//  },
+//  new: (req, res) => {
+//    res.render('new');
+//  },
+//  create: async (req, res) => {
+//    const period = new Period(req.body.period);
+//    await period.save();
+//    res.redirect('/periods');
+//  },
+//  show: async (req, res) => {
+//    const period = await Period.findById(req.params.id);
+//    res.render('show', { period });
+//  },
+//  edit: async (req, res) => {
+//    const period = await Period.findById(req.params.id);
+//    res.render('edit', { period });
+//  },
+//  update: async (req, res) => {
+//    const { id } = req.params;
+//    const period = await Period.findByIdAndUpdate(id, { ...req.body.period });
+//    res.redirect(`/periods/${period.id}`);
+//  },
+//  destroy: async (req, res) => {
+//    const { id } = req.params;
+//    await Period.findByIdAndDelete(id);
+//    res.redirect('/periods');
+//  }
+// };
+
+const express = require('express');
+const router = express.Router();
+const Period = require('../models/period');
+
+// Index
+router.get('/', async (req, res) => {
+  const periods = await Period.find({});
+  res.render('index', { periods });
+});
+
+// New
+router.get('/new', (req, res) => {
+  res.render('new');
+});
+
+// Create
+router.post('/', async (req, res) => {
+  const period = new Period(req.body.period);
+  await period.save();
+  res.redirect('/periods');
+});
+
+// Show
+router.get('/:id', async (req, res) => {
+  const period = await Period.findById(req.params.id);
+  res.render('show', { period });
+});
+
+// Edit
+router.get('/:id/edit', async (req, res) => {
+  const period = await Period.findById(req.params.id);
+  res.render('edit', { period });
+});
+
+// Update
+router.put('/:id', async (req, res) => {
+  const period = await Period.findByIdAndUpdate(req.params.id, { ...req.body.period });
+  res.redirect(`/periods/${period.id}`);
+});
+
+// Destroy
+router.delete('/:id', async (req, res) => {
+  await Period.findByIdAndDelete(req.params.id);
+  res.redirect('/periods');
+});
+
+module.exports = router;
+
 
 
 // Summary of Controller and References
