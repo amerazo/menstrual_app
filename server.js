@@ -9,6 +9,8 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const secretKey = process.env.SECRET_KEY;
 
+//// Set SESSION_SECRET environment variable
+process.env.SESSION_SECRET = 'mysecretvalue';
 
 //mongoDB
 const store = new MongoDBStore({
@@ -36,8 +38,6 @@ app.use(session({
 
 app.use(morgan('dev'));
 
-//// Set SESSION_SECRET environment variable
-process.env.SESSION_SECRET = 'mysecretvalue';
 
 
 //Mongoose
